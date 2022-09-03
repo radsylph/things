@@ -30,8 +30,8 @@ function set(){
     </div>
 
     <div class ="budy"> 
-    <img class = "sprite" src="${data.sprites.front_default}">
-    <img class = "sprite" src="${data.sprites.back_default}">
+    <img class = "sprite" src="${data.sprites.front_default}"alt = "front sprite">
+    <img class = "sprite" src="${data.sprites.back_default}" alt = "back sprite">
     </div>
     </div>
     `;
