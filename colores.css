@@ -1,0 +1,133 @@
+.btn{
+    width: auto;
+    height: auto;
+    margin: 5px;
+    border-radius: 5px; 
+    cursor: pointer;
+}  
+
+.btn:active{
+    box-shadow: 2px 2px 5px grey;
+}
+
+.btn.a:hover{
+    color: red;
+}
+
+.btn.c:hover ,.btn.d:hover,.btn.f:hover{
+    animation-name: a1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.btn.f{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+
+
+.prueba{
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+}
+
+.div1{
+    margin: 10px;
+    padding: 10px; 
+    padding-left: 10%;
+}
+
+.div2{    
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    float: left;
+    border: 2px solid black;
+    height: 20px;
+    width: 20px;
+}
+
+.div3{
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+    background-color: aquamarine;
+    margin: 10px;
+}
+
+.div4{
+    
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    background-color: aqua;
+    
+}
+
+.div5{
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.rgb{
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+    border: 2px solid black;
+    width: 50%;
+    height: auto;
+    background-color: white;
+}
+
+
+
+@keyframes a1{
+    0% {
+        color: purple;
+    }
+
+    20%{
+        color: indigo;
+    }
+
+    40%{
+        color: blue;
+    }
+
+    60%{
+        color: green;
+    }
+
+    80%{
+        color: yellowgreen
+    }
+
+    85%{
+        color: orange;
+    }
+
+    100%{
+        color: red
+    }
+
+}
