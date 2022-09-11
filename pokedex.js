@@ -3,8 +3,8 @@ async function set(){
 
   const url2 ="https://pokeapi.co/api/v2/pokemon/";
   const url3= "https://pokeapi.co/api/v2/pokemon-species/"
-    var url = url2 + x;
-    var url1 = url3 + x;
+    var url = url2 + x.toLowerCase();
+    var url1 = url3 + x.toLowerCase();
     fetch(url)
    .then(response => response.json())
    .then(data => {
@@ -59,10 +59,13 @@ async function set(){
     
 
    })
-   .catch(error=> console.log(error))
+   .catch(error=> as())
    }
 
-   
+   /*function as(){ //prueba para que la pokebola solo se mueva cuando halla un error en el nombre del pokemon
+    let obj = document.querySelector(".pokeball");
+    obj.style.animation = 'shake 2s '
+   }*/
    
  //https://www.youtube.com/watch?v=dVtnFH4m_fE
 

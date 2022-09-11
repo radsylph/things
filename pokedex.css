@@ -50,6 +50,10 @@ border: none;
     border-radius: 10px;
 }
 
+.a2.d{
+    
+}
+
 .a3{
     margin: 10px;
     padding: 10px;
@@ -101,6 +105,7 @@ border: none;
     border: 1px solid black;
     margin: 22.5px;
     transition: color 0.1s;
+    cursor: pointer;
 }
 
 .boton:hover{
@@ -109,7 +114,7 @@ border: none;
 .pokeball:hover{
     animation-name: shake;
     animation-duration: 1.5s;
-    animation-play-state: running;
+   animation-play-state: running;
 }
 
 #nombre{
@@ -128,6 +133,8 @@ border: none;
     padding: 10px;
     margin: 10px;
 }
+
+
 @keyframes shake {
     0% { transform: translate(0, 0) rotate(0); }
     20% { transform: translate(-10px, 0) rotate(-20deg); }
