@@ -1,28 +1,44 @@
-function set(){
+async function set(){
     x = document.getElementById("nombre").value;
 
-    var url2 ="https://pokeapi.co/api/v2/pokemon/";
+  const url2 ="https://pokeapi.co/api/v2/pokemon/";
+  const url3= "https://pokeapi.co/api/v2/pokemon-species/"
     var url = url2 + x;
+    var url1 = url3 + x;
     fetch(url)
    .then(response => response.json())
    .then(data => {
         console.log("Api loaded");
         console.log(data)
-           let element = document.querySelector("#pokemon");
+        fetch(url1)
+        .then(res => res.json())
+        .then(data => {
+         var descrip = data.flavor_text_entries;
+         descrip=data.flavor_text_entries[9]["flavor_text"];
+         console.log(data);
+         console.log(descrip);
+         y = document.querySelector("#prueba");
+         y.innerHTML = descrip;
+        })
+        
+          var descrip = data.species.url;
+           var element = document.querySelector("#pokemon");
            let tipos = data.types.map(tipe => tipe.type.name);
            let formas = data.abilities.map(form => form.ability.name);
            let nombre = data.name;
            let orden = data.order;
+           console.log(descrip);
            element.innerHTML = `
-    
+
     <div class = "a1">
     <div class = "a2">       
     <div class = "budy">
     <div class = "a3">
-    <p> Nombre del pokemon :${nombre}</p> 
-    <p>Numero de pokedex :${orden}</p> 
-    <p>${tipos}</p>
-    <p>${formas}</p>    
+    <p>name :${nombre}</p> 
+    <p>pokedex number :${orden}</p> 
+    <p>types :${tipos}</p>
+    <p>abilities :${formas}</p>   
+    
     </div>
     </div>
     </div>
@@ -33,17 +49,21 @@ function set(){
     <div class ="bsprite"> 
     <img class = "sprite" src="${data.sprites.front_default}">
     <img class = "sprite" src="${data.sprites.back_default}">
-    <div class="botones">
+  
     </div>
     </div>
     </div>
     </div>
-    </div>
-    
+
     `;
+    
+
    })
-   .catch(error=> console.log("ERROR"))
+   .catch(error=> console.log(error))
    }
+
+   
+   
  //https://www.youtube.com/watch?v=dVtnFH4m_fE
 
     
