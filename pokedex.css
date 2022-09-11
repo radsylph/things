@@ -1,12 +1,4 @@
-.fondo {
-    background-image:url("https://www.cpokemon.com/wp-content/uploads/2019/01/pikachu-zzz-1920x1200.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 150vh;
-    
 
-    
-}
 .budy{
     color: black;
     display: flex;
@@ -14,74 +6,128 @@
     align-content: center;
     align-items: center;
 }
+
 .sprite{
-background-color: white;
-width: 100px;
-height: 100px;
-padding: 10px;
-margin: 10px;
-border: 2px solid black;
-display: flex;
-flex-direction: row;
-align-items: center;
-align-content: center;
+width: 110px;
+height: 110px;
+border: none;
 }
 
 #nombre1{
     font-size: large;
 }
-
-.header{
-background-color: rgba(61, 57, 4, 0.568);
-opacity: 100%;
-height: 50vh;
-margin: 5%;
-display: flex;
-
-justify-content: center;
-align-items: center;
-border: 2px black;
-   
-
-}
-
-
-
 .a1{
-    margin: 10px;
-    padding: 2px;
+    margin-top: 45px;
     position: relative;
     float: center;
-    border: 2px solid black;    
+    border: 2px solid black ;    
     background-color: red;
-    padding-bottom: 15%;
+    padding-bottom: 20%;
+    border-radius: 5px;
+}
+.a1.s{
+    margin-top: 105px;
+    border: 20px solid transparent;
+    border-right: 2px solid black;
+    border-top: 20px solid black;
+    border-bottom: 2px solid black;
+    border-bottom-right-radius: 50px;
+    
 }
 
 .a2{
     margin: 10px;
-    padding: 10px;
+    padding: 4px;
     position: relative;
     float: center;
     border: 2px solid black;  
     background-color: rgba(175, 170, 169, 1);  
+    border-radius: 10px;
 }
 
 .a3{
     margin: 10px;
     padding: 10px;
-    position: relative;
-    float: center;
-    border: 2px solid black;  
+    border: 2px solid black;
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9938babd-3a6f-476d-81a9-fdfadc2bf5ff/d6zj43i-988ad0d0-32f4-4484-91e2-a6fafb38658d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5MzhiYWJkLTNhNmYtNDc2ZC04MWE5LWZkZmFkYzJiZjVmZlwvZDZ6ajQzaS05ODhhZDBkMC0zMmY0LTQ0ODQtOTFlMi1hNmZhZmIzODY1OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0TgtULG5Z79lftb-lHbkdvntzSbw0pr5vQjr89wBZxM");  
+    
 }
 
 .bsprite{
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9938babd-3a6f-476d-81a9-fdfadc2bf5ff/d6zj43i-988ad0d0-32f4-4484-91e2-a6fafb38658d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk5MzhiYWJkLTNhNmYtNDc2ZC04MWE5LWZkZmFkYzJiZjVmZlwvZDZ6ajQzaS05ODhhZDBkMC0zMmY0LTQ0ODQtOTFlMi1hNmZhZmIzODY1OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0TgtULG5Z79lftb-lHbkdvntzSbw0pr5vQjr89wBZxM");  
     flex-direction: row;
     position: relative;
+    border: 2px solid black ;
 }
 
+.centro{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
 
+.type{
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
 
+}
 
+.pokeball{
+    background: linear-gradient(0deg,
+    #fff 0%,
+    #fff 50%,
+    #fb0d3e 50%,
+    #fb0d3e 100%);
+    border-radius: 50%;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;  
+    box-shadow: 2px 2px 5px ;
+   
+    }
+.boton{
+    border-radius: 50%;
+    height: 15px;
+    width: auto;
+    border: 1px solid black;
+    margin: 22.5px;
+    transition: color 0.1s;
+}
 
+.boton:hover{
+    background-color: red;
+}
+.pokeball:hover{
+    animation-name: shake;
+    animation-duration: 1.5s;
+    animation-play-state: running;
+}
 
+#nombre{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+    box-shadow: 2px 2px 5px ;
+}
+
+.box{
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-10px, 0) rotate(-20deg); }
+    30% { transform: translate(10px, 0) rotate(20deg); }
+    50% { transform: translate(-10px, 0) rotate(-10deg); }
+    60% { transform: translate(10px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+  }

@@ -4,19 +4,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <head>
         
-        <title>prueba</title>
+        <title>PokeDex!</title>
         
     </head>
-    <body class="fondo">
+    <body >
     <link rel="stylesheet" href="pokedex.css">
     <script src="pokedex.js"></script>
-    <p>nombre del pokemon</p>
-    <input type="text" id="nombre" placeholder="ingrese pokemon">
     
-    <button onclick="set()">buscar</button>
+    <div class="box">  
+    <input type="text" id="nombre" placeholder="nombre del pokemon">
+    <div class="pokeball">
+    <button onclick="set()" class="boton"></button>
+    </div>
+
+    <div id="pokemon" class="budy"></div>
+
+   <div id="sprite"></div> 
+</div>
 
     
-    <div id="pokemon" class="budy"></div>
-   <div id="sprite"></div> 
     </body>
 </html>
