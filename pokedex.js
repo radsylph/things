@@ -42,22 +42,10 @@ async function set(){
     </div>
     </div>
     </div>
-<<<<<<< HEAD
 
     <div class ="budy"> 
     <img class = "sprite" src="${data.sprites.front_default}"alt = "front sprite">
     <img class = "sprite" src="${data.sprites.back_default}" alt = "back sprite">
-=======
-    </div>
-   
-    <div class ="a1 s"> 
-    <div class ="a2 s"> 
-    <div class ="bsprite"> 
-    <img class = "sprite" src="${data.sprites.front_default}">
-    <img class = "sprite" src="${data.sprites.back_default}">
-  
-    </div>
->>>>>>> 54b222524a4d5a5989058df7be532353318f58b3
     </div>
     </div>
     </div>
