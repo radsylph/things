@@ -3,50 +3,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <head>
-        <script>
-
-            function a(){
-            var obj = document.getElementById("container");
-            obj.style["color"] = "red";
-            }
-
-            function b(){
-            var obj = document.getElementById("container");
-            obj.style["color"] = "black";
-            }
-
-            function d(){
-                var blue = document.getElementById("b3"); 
-                var red = document.getElementById("b1");
-                var green = document.getElementById("b2");
-                rgb ="rgb("+Number(red.value)+","+Number(green.value)+","+Number(blue.value)+")"
-                function c(){
-                var obj = document.getElementById("color");
-                obj.style["background-color"] = rgb;
-                }
-                return c;
-            }
-
-            function e(){
-                d();
-                var obj = document.getElementById("container");
-                obj.style["color"] = rgb;
-            }
-
-            function f(){
-                d();
-                var obj = document.getElementById("prueba");
-                obj.style["background-color"] = rgb;
-            }
-
-            function g(){
-                var obj = document.getElementById("prueba");
-                obj.style["background-color"] = "white";
-            }
-
-        </script>
-                                                
-
+        <title>RGB</title>
+        <link rel="stylesheet" href="./colores.css">
+        <script src="./colores.js"></script>
+                    
     </head>
 
     <body>
@@ -57,11 +17,11 @@
         <section class="prueba" id="prueba">
         <h1 id="container">hola esto es una mensaje de prueba</h1>
         <div class="div1"> 
-        <button onclick="a()" class="b1"> cambia el texto a rojo</button>
-        <button onclick ="b()"class="b2"> resetea el texto </button>
-        <button onclick = "e()"class="b3"> cambia el texto al color rgb</button>
-        <button onclick = "f()"class="b4"> cambia el color de fondo al color de rgb</button>
-        <button onclick = "g()"class="b5"> resetea el color de fondo</button>
+        <button onclick="a()" class="btn a"> cambia el texto a rojo</button>
+        <button onclick ="b()"class="btn b"> resetea el texto </button>
+        <button onclick = "e()"class="btn c"> cambia el texto al color rgb</button>
+        <button onclick = "f()"class="btn d"> cambia el color de fondo al color de rgb</button>
+        <button onclick = "g()"class="btn e"> resetea el color de fondo</button>
         </div>
         </section>
         </div>
@@ -70,12 +30,12 @@
         <div class="div4">
         <div class="rgb">
         <h1>crea tu propio color con RGB</h1>
-        <section class="set"> 
-        <input type="number" id="b1" placeholder="red (max 255)">
-        <input type="number" id="b2" placeholder="green (max 255)">
-        <input type="number" id="b3" placeholder="blue (max 255)">
-        <div class="xd">
-        <button onclick="d()()"> probar color</button>
+        <section>
+        <input type="number" id="i1" placeholder="red (max 255)">
+        <input type="number" id="i2" placeholder="green (max 255)">
+        <input type="number" id="i3" placeholder="blue (max 255)">
+        <div class="div5">
+        <button onclick="d()()" class="btn f"> probar color</button>
         </div>
         </section>    
         <div id = "color" class="div2"></div>
@@ -83,6 +43,7 @@
         </div>
 
         <hr>
+<<<<<<< HEAD
 
         <style> 
 
@@ -231,5 +192,7 @@
 
         }
         </style>
+=======
+>>>>>>> 54b222524a4d5a5989058df7be532353318f58b3
     </body>
 </html>
