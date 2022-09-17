@@ -1,3 +1,4 @@
+
 async function set(){
     x = document.getElementById("nombre").value;
 
@@ -69,4 +70,3 @@ async function set(){
    
  //https://www.youtube.com/watch?v=dVtnFH4m_fE
 
-    
