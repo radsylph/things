@@ -1,0 +1,10 @@
+notepad
+
+legunajes de clientes web clase 1;
+lo que se va a ver;
+html, css ,javascript , xml
+
+cosas claves:
+reentrancia
+bios
+sistemas operativos

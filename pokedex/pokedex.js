@@ -60,13 +60,29 @@ async function set(){
     
 
    })
-   .catch(error=> as())
+   .catch(error=> ds())
+   }
+   function ds(){
+    setTimeout(() => 
+    {
+      as()
+      setTimeout(() => {
+        cd()
+      }, "2000");
+    } , "10")
    }
 
-   /*function as(){ //prueba para que la pokebola solo se mueva cuando halla un error en el nombre del pokemon
+   function as(){ 
+    //prueba para que la pokebola solo se mueva cuando halla un error en el nombre del pokemon
     let obj = document.querySelector(".pokeball");
-    obj.style.animation = 'shake 2s '
-   }*/
+    obj.style.animation = 'shake 2s ';
+   }
+
+   function cd(){
+    let obj = document.querySelector(".pokeball");
+
+    obj.style.animation = 'nose 2s';
+   }
    
  //https://www.youtube.com/watch?v=dVtnFH4m_fE
 
