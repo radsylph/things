@@ -16,9 +16,9 @@
 }
 
 .btn.c:hover ,.btn.d:hover,.btn.f:hover,.btn.g:hover{
-    animation-name: a1;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+        animation-name: a1;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
 }
 
 .btn:hover{
@@ -88,7 +88,6 @@
     align-content: center;
     flex-direction: column;
     display: flex;
-
 }
 
 .rgb{

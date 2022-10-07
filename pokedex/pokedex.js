@@ -35,10 +35,10 @@ async function set(){
     <div class = "a2">       
     <div class = "budy">
     <div class = "a3">
-    <p>name :${nombre}</p> 
-    <p>pokedex number :${orden}</p> 
-    <p>types :${tipos}</p>
-    <p>abilities :${formas}</p>   
+    <p>Name: ${nombre}</p> 
+    <p>Pokedex Number: ${orden}</p> 
+    <p>Types: ${tipos}</p>
+    <p>Abilities: ${formas}</p>   
     
     </div>
     </div>
