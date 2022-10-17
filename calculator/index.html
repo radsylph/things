@@ -7,38 +7,38 @@
     <link rel="stylesheet" href="style.css">
     <title>Calculadora super genial</title>
 </head>
-<body>
+<body class="img">
     <div class="a1">
     <div class="cuerpo">
     <div class="pantalla">
         <textarea name="pantalla" id="screen" cols="30" rows="3"></textarea>
     </div>
     <div class="botones">
-        <button class="boton c">7</button>
-        <button class="boton b">8</button>
-        <button class="boton a">9</button>
-        <button class="boton d">C</button>
-        <button class="boton g">6</button>
-        <button class="boton f">5</button>
-        <button class="boton e">4</button>
-        <button class="boton k">3</button>
-        <button class="boton j">2</button>
-        <button class="boton h">1</button>
-        <button class="boton l">0</button> 
-        <button class="boton p">+</button>
-        <button class="boton o">-</button>
-        <button class="boton n">/</button>
-        <button class="boton y">%</button>
-        <button class="boton q">=</button>
-        <button class="boton t">.</button>
-        <button class="boton m">*</button>
-        <button class="boton u">(</button>
-        <button class="boton r">)</button>
+        <button class="boton d" id="reset">C</button>
+        <button class="boton c" id="9">9</button>
+        <button class="boton b"id="8">8</button>
+        <button class="boton a" id="7">7</button>
+        <button class="boton g" id="6">6</button>
+        <button class="boton f" id="5">5</button>
+        <button class="boton e" id="4">4</button>
+        <button class="boton k"id="3">3</button>
+        <button class="boton j" id="2">2</button>
+        <button class="boton h" id="1">1</button>
+        <button class="boton l" id="0">0</button> 
+        <button class="boton p" id="+">+</button>
+        <button class="boton o" id="-">-</button>
+        <button class="boton n" id="/">/</button>
+        <button class="boton y" id="%">%</button>
+        <button class="boton q" id="=" >=</button>
+        <button class="boton t" id="." onclick="period()">.,</button>
+        <button class="boton m" id="*">*</button>
+        <button class="boton u" id="(">(</button>
+        <button class="boton r" id=")">)</button>
 
-        <button class="boton ab" onclick="izdr()" ondblclick="izdr()()" id="1"
-        ><></button>   
-        <button class="boton cd">^</button>
-        <button class="boton ef">D</button>
+        <button class="boton ab" onclick="izdr()" id="direccion"><></button>   
+        <button class="boton cd" id="^">^</button>
+        <button class="boton ef" id="delete">D</button>
+        <button class="boton gh" id="sqrt">√</button>
         
     </div>  
     </div>  
