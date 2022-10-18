@@ -42,8 +42,8 @@ sub.addEventListener("click" , ()=> {result.textContent = result.textContent + "
 mul.addEventListener("click" , ()=> {result.textContent = result.textContent + "*"},true);
 div.addEventListener("click" , ()=> {result.textContent = result.textContent + "/"},true);
 pow.addEventListener("click" , ()=> {result.textContent = result.textContent + "Math.pow("});
-equal.addEventListener("click" , ()=> {resultado()});
-per.addEventListener("click" , ()=> {result.textContent = result.textContent + "%" },true);
+equal.addEventListener("dblclick" , ()=> {resultado()});
+per.addEventListener("click" , ()=> {result.textContent = result.textContent + "*0.0"});
 l.addEventListener("click" , ()=> {result.textContent = result.textContent + "("},true);
 r.addEventListener("click" , ()=> {result.textContent = result.textContent + ")"},true);
 sqrt.addEventListener("click" , ()=> [result.textContent = result.textContent + "Math.sqrt("])
@@ -62,9 +62,7 @@ try{
 result.textContent= (eval(result.textContent));
 } catch(error){
     result.textContent=' SYNTAX ERROR '
-}
-
-}
+}}
 
 function porcentaje(){
 
@@ -72,14 +70,83 @@ function porcentaje(){
         
         let x = result.value.split('%')
         
-         result.textContent = eval(x[0])*x[1]/100;
+         result.textContent = eval(eval(x[0])*x[1]/100);
 
     } catch (error) {
         result.textContent=' SYNTAX ERROR '
     }
 }
 
-document.addEventListener("keydown" , function teclada(key){
+
+document.addEventListener("keydown" , function tecla(key){
+console.log(key.keyCode);
+    switch(key.keyCode){
+        case 48:
+            {
+                result.textContent = result.textContent + "0";
+            }
+            break;
+        case 49:
+            result.textContent = result.textContent + "1";
+            break;
+        case 50:
+            result.textContent = result.textContent + "2";
+            break;
+        case 51:
+            result.textContent = result.textContent + "3";
+            break;
+        case 52:
+            result.textContent = result.textContent + "4";
+            break;
+        case 53:
+            result.textContent = result.textContent + "5";
+            break;
+        case 54:
+            result.textContent = result.textContent + "6";
+            break;
+        case 55:
+            result.textContent = result.textContent + "7";
+            break;
+        case 56:
+            result.textContent = result.textContent + "8";
+            break;
+        case 57:
+            result.textContent = result.textContent + "9";
+            break;
+        case 190:
+        result.textContent = result.textContent + ".";
+            break;
+        case 188:
+            result.textContent = result.textContent + ",";
+            break;
+        case 187:
+            result.textContent = result.textContent + "+";
+            break;
+        case 189:
+            result.textContent = result.textContent + "-";
+            break;
+        case 191:
+            result.textContent = result.textContent + "/";
+            break;
+        case 53:
+            result.textContent = result.textContent + "%";
+            break;
+        case 8:
+            d();
+            break;
+        case 13:
+            resultado();
+            break;
+        case 69:
+            result.textContent = result.textContent + "%";
+            break;
+    
+            
+
+
+    }
+
+    
 
    
 
