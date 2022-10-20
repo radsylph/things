@@ -102,7 +102,7 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
         
     }
     else{
-        matriz2(f,c,o);
+        matriz1(f,c,o);
         show2(m);
         visual("arr1" , m);
         let m4 = "";
@@ -124,8 +124,8 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
             alert("las filas y las columnas no pueden estar vacias o ser 0");
         }
         else{
+            matriz1(f,c,o);
             matriz2(f,c,o2);
-            show2(m);
             show2(m2);
             visual("arr1" , m);
             visual("arr2" , m2);
@@ -142,6 +142,7 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
                 alert("las filas y las columnas no pueden estar vacias o ser 0");
             }
             else{
+                matriz1(f,c,o);
                 matriz2(f,c,o2); 
                 show2(m);
                 show2(m2);
@@ -163,7 +164,7 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
                 alert("el escalar no puede estar vacio o ser 0")
             }
             else{
-                matriz2(f,c);
+                matriz1(f,c);
                 show2(m);
                 visual("arr1" , m);
                 escalar(m, e);
@@ -195,6 +196,34 @@ console.log("libreria cargada");
 
 let body = document.getElementsByName("body").onload = init();
 
+function matriz1(f , c , o){
+    switch (o) {
+        case 0:
+            o = "0"
+            break;
+        case 1:
+            o = "9";
+        default:
+            o = "9";
+            break;
+    } 
+   
+    m = new Array(f);
+    for (let index1 = 0; index1 < f; index1++) {
+     m[index1] = new Array(c);
+     for (let index2 = 0; index2 < c; index2++) {
+         m[index1][index2] = Number(prompt("ingresa un valor para la celda" + index1 + "x" + index2 + " de la primera matriz"));
+     }
+    }
+    /*m = new Array(f);
+   for (let index1 = 0; index1 < f; index1++) {
+       m[index1] = new Array(c);
+       for (let index2 = 0; index2 < c; index2++) {
+           m[index1][index2] = eval(generate1);
+       }
+   } */
+}
+
 function matriz2(f , c , o ){
     switch (o) {
        case 0:
@@ -205,27 +234,27 @@ function matriz2(f , c , o ){
        default:
            o = "9";
            break;
+
    } 
    
    const generate1 = "Math.floor(Math.random()*" +o+ ");";
    const generate2 = "Math.floor(Math.random()*" +o+ ");";
    
-    m = new Array(f);
-   for (let index1 = 0; index1 < f; index1++) {
-       m[index1] = new Array(c);
-       for (let index2 = 0; index2 < c; index2++) {
-           m[index1][index2] = eval(generate1);
-       }
-   } 
-
    m2 = new Array(f);
+           for (let index3 = 0; index3 < f; index3++) {
+            m2[index3] = new Array(c);
+            for (let index4 = 0; index4 < c; index4++) {
+                m2[index3][index4] = Number(prompt("ingresa un valor para la celda" + index3 + "x" + index4 + "de la segunda matriz"));
+            }
+           }
+   /*m2 = new Array(f);
    for (let index3 = 0; index3 < f; index3++) {
        m2[index3] = new Array(c);
        for (let index4 = 0; index4 < c; index4++) {
            m2[index3][index4] = eval(generate2);
            
        }
-   }
+   }*/
 
 }
 
