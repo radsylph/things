@@ -8,7 +8,8 @@ let div1 = document.createElement("div"); div1.classList.add("mark");
 let btn1 = document.createElement("button"); btn1.innerHTML = "crear matris y transponerla"; btn1.id = "1";
 let btn2 = document.createElement("button"); btn2.innerHTML = "crear 2 matrices y sumarlas "; btn2.id = "2"; 
 let btn3 = document.createElement("button"); btn3.innerHTML = "crear 2 matrices y restarlas "; btn3.id = "3"; 
-let btn4 = document.createElement("button"); btn4.innerHTML = "crear 1 matrices y multiplicarla por un escalar"; btn2.id = "2"; 
+let btn4 = document.createElement("button"); btn4.innerHTML = "crear 1 matrices y multiplicarla por un escalar"; btn4.id = "4"; 
+let btn5 = document.createElement("button"); btn5.innerHTML = "crear 2 matrices y multiplicarlas"; btn5.id = "5";
 var inp1 = document.createElement("input"); inp1.placeholder = "filas"; inp1.id = "fila";
 var inp2 = document.createElement("input"); inp2.placeholder = "columnas"; inp2.id = "columna";
 var inp3 = document.createElement("input"); inp3.placeholder = "escalar"; inp3.id = "escalar";
@@ -24,6 +25,7 @@ div1.appendChild(btn1);
 div1.appendChild(btn2);
 div1.appendChild(btn3);
 div1.appendChild(btn4);
+div1.appendChild(btn5);
 div1.appendChild(inp1);
 div1.appendChild(inp2);
 div1.appendChild(inp3);
@@ -103,6 +105,8 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
         matriz2(f,c,o);
         show2(m);
         visual("arr1" , m);
+        let m4 = "";
+        visual("arr2" , m4);
         trans(m);
         
     }
@@ -141,7 +145,9 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
                 matriz2(f,c,o2); 
                 show2(m);
                 show2(m2);
-                mult(m, m2);
+                visual("arr1" , m);
+                visual("arr2" , m2);
+                resta(m, m2);
             }
             });  
 
@@ -162,7 +168,25 @@ btn1.addEventListener("click" , function crearmatriz(f , c , o){
                 visual("arr1" , m);
                 escalar(m, e);
             } 
-        })
+        });
+
+        btn5.addEventListener("click" , function crearmatriz(f , c , o){ 
+            f=inp1.value; 
+            c=inp2.value; 
+            o2=inp3.value;
+            if (f == 0 || c == 0  )
+            {
+                alert("las filas y las columnas no pueden estar vacias o ser 0");
+            }
+            else{
+                matriz2(f,c,o2); 
+                show2(m);
+                show2(m2);
+                visual("arr1" , m);
+                visual("arr2" , m2);
+                mult(m, m2);
+            }
+            }); 
         
     
 console.log("libreria cargada");
@@ -230,7 +254,7 @@ function resta(m1, m2, m3){
 }
 
 function escalar(m1 , escalar , m3){
-    let m4 = [];
+    let m4 = "";
     m3 = new Array(m1.length);
     for (let index = 0; index < m1.length; index++) {
         m3[index] = new Array(m1.length);
@@ -238,9 +262,9 @@ function escalar(m1 , escalar , m3){
             m3[index][index2] = m1[index][index2] * escalar; 
         } 
     }
+    visual("arr2" , m4);
     show2(m3);
     visual("arr3" , m3);
-    visual("arr2" , m4);
 }
 function mult(m1 , m2 , m3){
    
@@ -257,8 +281,6 @@ function mult(m1 , m2 , m3){
     
     show2(m3);
     visual("arr3" , m3);
-    visual("arr2" , m2);
-    visual("arr1" , m1);
 }
 
 function trans(arr) {
