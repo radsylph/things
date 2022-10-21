@@ -3,7 +3,8 @@
 //prueba.push(6);//agrega un elemento al final
 //prueba.unshift(0);//agrega un elemento al inicio
 function init(){ 
-    
+
+
 let div1 = document.createElement("div"); div1.classList.add("mark");
 let btn1 = document.createElement("button"); btn1.innerHTML = "crear matris y transponerla"; btn1.id = "1";
 let btn2 = document.createElement("button"); btn2.innerHTML = "crear 2 matrices y sumarlas "; btn2.id = "2"; 
@@ -196,6 +197,28 @@ console.log("libreria cargada");
 
 let body = document.getElementsByName("body").onload = init();
 
+/*function determinante(m1){
+    let d1;
+    let d2;
+    let m3 = new Array();
+    for (let index = 0; index < m1.length; index++) {
+        m3[index] = new Array();
+        for (let index2 = 0; index2 < m1.length; index2++) {
+            m3[index][index2] = new Array();
+            if (index == index2){
+            d1 += m3[index][index2];
+            console.log(d1);
+            }
+            if (index + index2 == m1.length-1){
+                d2 =+ d2   +m3[index][index2];
+                console.log(d2)
+            }
+            
+        }
+    }
+     console.log('Diagonal 1 = ' + d1 + ' Diagonal 2 = ' + d2 );
+}*/
+
 function matriz1(f , c , o){
     switch (o) {
         case 0:
@@ -208,20 +231,21 @@ function matriz1(f , c , o){
             break;
     } 
    
-    m = new Array(f);
+   /* m = new Array(f);
     for (let index1 = 0; index1 < f; index1++) {
      m[index1] = new Array(c);
      for (let index2 = 0; index2 < c; index2++) {
          m[index1][index2] = Number(prompt("ingresa un valor para la celda" + index1 + "x" + index2 + " de la primera matriz"));
      }
-    }
-    /*m = new Array(f);
+    }*/
+    let generate = "Math.floor(Math.random()*" +o+ ");";
+    m = new Array(f);
    for (let index1 = 0; index1 < f; index1++) {
        m[index1] = new Array(c);
        for (let index2 = 0; index2 < c; index2++) {
-           m[index1][index2] = eval(generate1);
+           m[index1][index2] = eval(generate);
        }
-   } */
+   }
 }
 
 function matriz2(f , c , o ){
@@ -236,25 +260,22 @@ function matriz2(f , c , o ){
            break;
 
    } 
-   
-   const generate1 = "Math.floor(Math.random()*" +o+ ");";
-   const generate2 = "Math.floor(Math.random()*" +o+ ");";
-   
-   m2 = new Array(f);
+   /*m2 = new Array(f);
            for (let index3 = 0; index3 < f; index3++) {
             m2[index3] = new Array(c);
             for (let index4 = 0; index4 < c; index4++) {
                 m2[index3][index4] = Number(prompt("ingresa un valor para la celda" + index3 + "x" + index4 + "de la segunda matriz"));
             }
-           }
-   /*m2 = new Array(f);
+           }*/
+let generate = "Math.floor(Math.random()*" +o+ ");";
+   m2 = new Array(f);
    for (let index3 = 0; index3 < f; index3++) {
        m2[index3] = new Array(c);
        for (let index4 = 0; index4 < c; index4++) {
-           m2[index3][index4] = eval(generate2);
+           m2[index3][index4] = eval(generate);
            
        }
-   }*/
+   }
 
 }
 
@@ -291,13 +312,13 @@ function escalar(m1 , escalar , m3){
             m3[index][index2] = m1[index][index2] * escalar; 
         } 
     }
-    visual("arr2" , m4);
     show2(m3);
+    visual("arr2" , m4);
     visual("arr3" , m3);
 }
 function mult(m1 , m2 , m3){
    
-    m3 = new Array(m1.length);
+    m3 = new Array(m1.length);  
     for (let index = 0; index < m1.length; index++) {
         m3[index] = new Array(m1.length);
         for(let index2 = 0; index2 < m1.length; index2++){
@@ -312,6 +333,34 @@ function mult(m1 , m2 , m3){
     visual("arr3" , m3);
 }
 
+function inversa(m1 , m3 ,x){
+    m3 = m1;
+    //recorrido del pivote
+    for (let index = 0; index <= m1.length-1; index++) {
+        x = m3[index][index];
+        //fila pivote
+         for (let index2 = 0; index2 <= m3[0].length-1; index2++) {
+            console.log(x);
+            m3[index][index2] = m3[index][index2]/x;
+        }
+        //convertir a 0
+        if(index <= m3.length-2){
+            //filas para calcular
+            for (let index3 = index + 1; index3 <= m3.length-1; index3++) {
+                //columnas para calcular
+                x = m3[index3][index];
+                for(let index4 = 0; index4 <= m3.length-1; index4++) {
+                    m3[index3][index4] =(m3[index3][index4]-(x-m3[index]));  
+                    
+                }
+                
+            }
+        }
+    }
+    show2(m3);
+    return m3;
+}
+
 function trans(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < i; j++) {
@@ -324,15 +373,12 @@ function trans(arr) {
     visual("arr3" , arr);
 }
 
-function visual(x , arr){
+function visual(x , m1){
      document.getElementById(x).innerHTML = "";
-  
-
-    for (let index = 0; index < arr.length; index++) {
-        console.log(arr[index]);
+    for (let index = 0; index < m1.length; index++) {
+        console.log(m1[index]);
         document.getElementById(x).innerHTML +=
-        `<div>${arr[index]}</div>`;
-        
+        `<div>${m1[index]}</div>`;
     }
 }
 
@@ -340,3 +386,4 @@ function show2(arr){
     for(let element in arr)
     console.log(element + "=" +arr[element]);
 }
+
