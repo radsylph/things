@@ -284,147 +284,100 @@ function init(){
    for (let index1 = 0; index1 < f; index1++) {
        m2[index1] = new Array(c);
        for (let index2 = 0; index2 < c; index2++) {
-        if (index1==index2){
-            m2[index1][index2] = eval(generate2);  
-        }
-            if(index1!= index2 ){
-                m2[index1][index2] = eval(generate1);
-            }
-           
+           m[index1][index2] = eval(generate1);
        }
    } 
-    break;
-           default:
-           /* m2 = new Array(f);
-            for (let index1 = 0; index1 < f; index1++) {
-             m2[index1] = new Array(c);
-             for (let index2 = 0; index2 < c; index2++) {
-                 m2[index1][index2] = Number(prompt("ingresa un valor para la celda" + index1 + "x" + index2 + " de la segunda   matriz"));
-             }
-              
-            }*/
-        let generate3 = "Math.floor(Math.random()*10);";
-       m2 = new Array(f);
-       for (let index3 = 0; index3 < f; index3++) {
-           m2[index3] = new Array(c);
-           for (let index4 = 0; index4 < c; index4++) {
-               m2[index3][index4] = eval(generate3);
-               
-           }
-       }
-               break;
-    
-       } 
-        
-    }
-    
-    function suma(m1 , m2 , m3){
-        m3 = new Array(m1.length);
-        for (let index = 0; index < m1.length; index++) {
-            m3[index] = new Array(m1.length);
-            for (let index2 = 0; index2 < m1.length; index2++) {
-                m3[index][index2] = m1[index][index2] + m2[index][index2];
-            }
-        }
-        show2(m3);
-        visual("arr3" , m3);
-    }
-    
-    function resta(m1, m2, m3){
-        m3 = new Array(m1.length);
-        for (let index = 0; index < m1.length; index++) {
-            m3[index] = new Array(m1.length);
-            for (let index2 = 0; index2 < m1.length; index2++) {
-                m3[index][index2] = m1[index][index2] - m2[index][index2];  
-            }
-        }
-        show2(m3);
-        visual("arr3" , m3);
-    }
-    
-    function escalar(m1 , escalar , m3){
-        let m4 = "";
-        m3 = new Array(m1.length);
-        for (let index = 0; index < m1.length; index++) {
-            m3[index] = new Array(m1.length);
-            for (let index2 = 0; index2 < m1.length; index2++) {
-                m3[index][index2] = m1[index][index2] * escalar; 
-            } 
-        }
-        show2(m3);
-        visual("arr2" , m4);
-        visual("arr3" , m3);
-    }
-    function mult(m1 , m2 , m3){
-       
-        m3 = new Array(m1.length);  
-        for (let index = 0; index < m1.length; index++) {
-            m3[index] = new Array(m1.length);
-            for(let index2 = 0; index2 < m1.length; index2++){
-                m3[index][index2] = 0;
-                for (let index3 = 0; index3 < m1.length; index3++) {
-                    m3[index][index2] = m3[index][index2] + m1[index][index3] * m2[index3][index2];
-                }
-            }
-        }
-        
-        show2(m3);
-        visual("arr3" , m3);
-    }
-    
-    function inversa(m1 , m3 ,x){
-        m3 = m1;
-        //recorrido del pivote
-        for (let index = 0; index < m3.length; index++) {
-            x = m3[index][index];
-            //fila pivote
-             for (let index2 = 0; index2 < m3[0].length; index2++) {
-                console.log(x);
-                m3[index][index2] = m3[index][index2]/x;
-            }
-            //convertir a 0
-            if(index < m3.length-1){
-                //filas para calcular
-                for (let index3 = index + 1; index3 < m3.length; index3++) {
-                    //columnas para calcular
-                    x = m3[index3][index];
-                    for(let index4 = 0; index4 < m3[0].length; index4++) {
-                        m3[index3][index4] =(m3[index3][index4]-(x*m3[index][index4]));  
-                        
-                    }
-                    
-                }
-            }
-        }
-        show2(m3);
-        visual("arr3" , m3);
-        return m3;
-    }
-    
-    function trans(arr) {
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = 0; j < i; j++) {
-                const temp = arr[i][j];
-                arr[i][j] = arr[j][i];
-                arr[j][i] = temp;
-                show2(arr);
-            }
-        }
-        visual("arr3" , arr);
-    }
-    
-    function visual(x , m1){
-         document.getElementById(x).innerHTML = "";
-        for (let index = 0; index < m1.length; index++) {
-            console.log(m1[index]);
-            document.getElementById(x).innerHTML +=
-            `<div>${m1[index]}</div>`;
-        }
-    }
-    
-    function show2(arr){
-        for(let element in arr)
-        console.log(element + "=" +arr[element]);
-    }
 
+   m2 = new Array(f);
+   for (let index3 = 0; index3 < f; index3++) {
+       m2[index3] = new Array(c);
+       for (let index4 = 0; index4 < c; index4++) {
+           m2[index3][index4] = eval(generate2);
+           
+       }
+   }
+
+}
+
+function suma(m1 , m2 , m3){
+    m3 = new Array(m1.length);
+    for (let index = 0; index < m1.length; index++) {
+        m3[index] = new Array(m1.length);
+        for (let index2 = 0; index2 < m1.length; index2++) {
+            m3[index][index2] = m1[index][index2] + m2[index][index2];
+        }
+    }
+    show2(m3);
+    visual("arr3" , m3);
+}
+
+function resta(m1, m2, m3){
+    m3 = new Array(m1.length);
+    for (let index = 0; index < m1.length; index++) {
+        m3[index] = new Array(m1.length);
+        for (let index2 = 0; index2 < m1.length; index2++) {
+            m3[index][index2] = m1[index][index2] - m2[index][index2];  
+        }
+    }
+    show2(m3);
+    visual("arr3" , m3);
+}
+
+function escalar(m1 , escalar , m3){
+    let m4 = "";
+    m3 = new Array(m1.length);
+    for (let index = 0; index < m1.length; index++) {
+        m3[index] = new Array(m1.length);
+        for (let index2 = 0; index2 < m1.length; index2++) {
+            m3[index][index2] = m1[index][index2] * escalar; 
+        } 
+    }
+    visual("arr2" , m4);
+    show2(m3);
+    visual("arr3" , m3);
+}
+function mult(m1 , m2 , m3){
+   
+    m3 = new Array(m1.length);
+    for (let index = 0; index < m1.length; index++) {
+        m3[index] = new Array(m1.length);
+        for(let index2 = 0; index2 < m1.length; index2++){
+            m3[index][index2] = 0;
+            for (let index3 = 0; index3 < m1.length; index3++) {
+                m3[index][index2] = m3[index][index2] + m1[index][index3] * m2[index3][index2];
+            }
+        }
+    }
     
+    show2(m3);
+    visual("arr3" , m3);
+}
+
+function trans(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < i; j++) {
+            const temp = arr[i][j];
+            arr[i][j] = arr[j][i];
+            arr[j][i] = temp;
+            show2(arr);
+        }
+    }
+    visual("arr3" , arr);
+}
+
+function visual(x , arr){
+     document.getElementById(x).innerHTML = "";
+  
+
+    for (let index = 0; index < arr.length; index++) {
+        console.log(arr[index]);
+        document.getElementById(x).innerHTML +=
+        `<div>${arr[index]}</div>`;
+        
+    }
+}
+
+function show2(arr){
+    for(let element in arr)
+    console.log(element + "=" +arr[element]);
+}
