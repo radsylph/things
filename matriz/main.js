@@ -25,6 +25,7 @@ function init() {
         <option value = "7">sacar la inversa de la matris 1</option>
         <option value = "8">sacar la inversa de la matris 2</option>
         </select>
+
         <select name = "opcion" id = "inp0"> 
         <option>-llenado de matriz-</option>
         <option value = "0">llenar con 0</option>
@@ -46,6 +47,10 @@ function init() {
   let btn6 = document.getElementById("6");
   let css = document.createElement("style");
   css.innerHTML = `
+        body{
+          background-image: linear-gradient(to right, blue, lightblue);
+        }
+
         .box {
          display : flex; 
          justify-content: center; 
@@ -66,11 +71,12 @@ function init() {
         }
          
          .box > div {
-        font-family: comic-sans;
         padding: 15px;
         margin: 10px;
         border-radius: 5px;
-        background-color: grey;
+        background-color: white;
+        border: 2px solid lightblue;  
+        color: solid black;
 
             }
             .btn{
