@@ -163,15 +163,13 @@ function init() {
       operacion(2, m, m2);
     } else if (op == 2) {
       mult(m, m2);
-    } else if (op == 3){
-     let e = inp3.value;
-      escalar(m ,e);
-    }
-    else if (op == 4){
+    } else if (op == 3) {
       let e = inp3.value;
-       escalar(m2 ,e);
-     }
-     else if (op == 5) {
+      escalar(m, e);
+    } else if (op == 4) {
+      let e = inp3.value;
+      escalar(m2, e);
+    } else if (op == 5) {
       trans(m);
     } else if (op == 6) {
       trans(m2);
@@ -186,62 +184,49 @@ function init() {
 }
 
 let body = (document.getElementsByName("body").onload = init());
-
-/*function determinante(m1){
-        let d1;
-        let d2;
-        let m3 = new Array();
-        for (let index = 0; index < m1.length; index++) {
-            m3[index] = new Array();
-            for (let index2 = 0; index2 < m1.length; index2++) {
-                m3[index][index2] = new Array();
-                if (index == index2){
-                d1 += m3[index][index2];
-                console.log(d1);
-                }
-                if (index + index2 == m1.length-1){
-                    d2 =+ d2   +m3[index][index2];
-                    console.log(d2)
-                }
-                
-            }
-        }
-         console.log('Diagonal 1 = ' + d1 + ' Diagonal 2 = ' + d2 );
-    }*/
-
+//funcion para crear la matris 1
 function matriz1(f, c, o) {
   console.log(o);
   if (o == 0) {
+    //string que genera 0's
     let generate = "Math.floor(Math.random()*0);";
     m = new Array(f);
     for (let index1 = 0; index1 < f; index1++) {
       m[index1] = new Array(c);
       for (let index2 = 0; index2 < c; index2++) {
+        //operacion que llena la matriz 1 con los numeros generados por el string anterior
         m[index1][index2] = eval(generate);
       }
     }
+    //se devuelve la matriz con puros 0
     return m;
   } else if (o == 1) {
+    //string que genera 0's
     let generate1 = "Math.floor(Math.random()*0);";
+    //string que genera 1's
     let generate2 = "Math.floor(Math.random()*0) + 1;";
     m = new Array(f);
     for (let index1 = 0; index1 < f; index1++) {
       m[index1] = new Array(c);
       for (let index2 = 0; index2 < c; index2++) {
         if (index1 == index2) {
+          //condicion que llena los espacios en diagonal de la matriz con 1, siempre y cuando sea diagonal
           m[index1][index2] = eval(generate2);
         }
         if (index1 != index2) {
+          //condicion que llena los espacions que no sean diagona de la matriz con 0
           m[index1][index2] = eval(generate1);
         }
       }
     }
+    //se devuelve la matriz indentidad.
     return m;
   } else if (o == 2) {
     m = new Array(f);
     for (let index1 = 0; index1 < f; index1++) {
       m[index1] = new Array(c);
       for (let index2 = 0; index2 < c; index2++) {
+        //aqui se llena la matriz con los numeros que ingresa el usuario
         m[index1][index2] = Number(
           prompt(
             "ingresa un valor para la celda" +
@@ -253,20 +238,25 @@ function matriz1(f, c, o) {
         );
       }
     }
+    //se retorna la matriz con los datos que ingreso el usuario
     return m;
   } else if (o == 3) {
+    //string que genera numeros aleatorios del 0 al 10
     let generate3 = "Math.floor(Math.random()*10);";
     m = new Array(f);
     for (let index3 = 0; index3 < f; index3++) {
       m[index3] = new Array(c);
       for (let index4 = 0; index4 < c; index4++) {
+        //ciclo que llena la matriz con los numeros generados aleatoriamente.
         m[index3][index4] = eval(generate3);
       }
     }
   }
+  //se retorna la matriz con los datos generados aleatoriamente
   return m;
 }
 
+//funcion que crea la matris 2. sus funciones son las mismas que la primera matris
 function matriz2(f, c, o) {
   if (o == 0) {
     let generate = "Math.floor(Math.random()*0);";
@@ -324,8 +314,9 @@ function matriz2(f, c, o) {
   return m2;
 }
 
+//funcion que se encarga de hacer la suma y la resta de las 2 matrices
 function operacion(op, m1, m2, m3) {
-  let operacion;
+  let operacion; //se declara una variable operacion para poder darle el valor de la operacion que se quiere hacer
   if (op == 1) {
     operacion = "+";
   } else if (op == 2) {
@@ -336,6 +327,7 @@ function operacion(op, m1, m2, m3) {
     m3[index] = new Array(m1.length);
     for (let index2 = 0; index2 < m1.length; index2++) {
       m3[index][index2] = eval(
+        //aqui es donde se decide si se va a sumar o a restar las 2 matrices
         m1[index][index2] + operacion + m2[index][index2]
       );
     }
@@ -345,25 +337,26 @@ function operacion(op, m1, m2, m3) {
 }
 
 function escalar(m1, escalar, m3) {
-  
+  //funcion que multiplica por un escalar una matris
   m3 = new Array(m1.length);
   for (let index = 0; index < m1.length; index++) {
     m3[index] = new Array(m1.length);
     for (let index2 = 0; index2 < m1.length; index2++) {
-      m3[index][index2] = m1[index][index2] * escalar;
+      m3[index][index2] = m1[index][index2] * escalar; // aqui se multiplica toda la matris por un escalar
     }
   }
   show2(m3);
   visual("arr3", m3);
 }
 function mult(m1, m2, m3) {
+  //funcion que multiplique 2 matrices
   m3 = new Array(m1.length);
   for (let index = 0; index < m1.length; index++) {
     m3[index] = new Array(m1.length);
     for (let index2 = 0; index2 < m1.length; index2++) {
-      m3[index][index2] = 0;
+      m3[index][index2] = 0; // se inicializa la matris en 0
       for (let index3 = 0; index3 < m1.length; index3++) {
-        m3[index][index2] =
+        m3[index][index2] = //el resultado de la matris sera la suma de las multiplicaciones
           m3[index][index2] + m1[index][index3] * m2[index3][index2];
       }
     }
@@ -374,24 +367,21 @@ function mult(m1, m2, m3) {
 }
 
 function inversa(m1, m3, x) {
+  // funcion que saca la inversa de una matris
   m3 = m1;
-  //recorrido del pivote
   for (let index = 0; index < m3.length; index++) {
-    x = m3[index][index];
-    //fila pivote
+    x = m3[index][index]; //x es nuestro pivote que va recorrer las filas, y se almacena para hacer la division
     for (let index2 = 0; index2 < m3[0].length; index2++) {
-      console.log(x);
-      m3[index][index2] = m3[index][index2] / x;
+      m3[index][index2] = m3[index][index2] / x; //aqui tenemos nuestra fila pivote. al divilir la fila por el pivote
+      alert(m3);
     }
-    //convertir a 0
     if (index < m3.length - 1) {
-      //filas para calcular
+      // aqui se convierte en 0 los numeros que esten por debajo de la fila pivote
       for (let index3 = index + 1; index3 < m3.length; index3++) {
-        //columnas para calcular
-        //text
+        //columnas para calcular la matriz inversa resultante
         x = m3[index3][index];
         for (let index4 = 0; index4 < m3[0].length; index4++) {
-          m3[index3][index4] = m3[index3][index4] - x * m3[index][index4];
+          m3[index3][index4] += -x * m3[index][index4];
         }
       }
     }
@@ -402,11 +392,11 @@ function inversa(m1, m3, x) {
 }
 
 function trans(m3) {
-  for (let i = 0; i < m3.length; i++) {
-    for (let j = 0; j < i; j++) {
-      const temp = m3[i][j];
-      m3[i][j] = m3[j][i];
-      m3[j][i] = temp;
+  for (let index = 0; index < m3.length; index++) {
+    for (let index2 = 0; index2 < index; index2++) {
+      const temp = m3[index][index2];
+      m3[index][index2] = m3[index2][index];
+      m3[index2][index] = temp;
       show2(m3);
     }
   }
