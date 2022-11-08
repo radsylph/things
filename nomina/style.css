@@ -1,18 +1,53 @@
-body{
-    background-image: linear-gradient(to right ,yellow, lightyellow, orange);
+.container {
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
 }
 
-
-.box{
-    border: 2px solid black;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px black;
-    padding: 20px;
-    margin: 15px;
+.box {
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
 }
 
-.main{
-position: relative;
-float:center;
+.box.a {
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  border: 2px 5px solid black;
+  background-color: whitesmoke;
+  height: auto;
+  width: 250px;
+}
+
+.box.a > div {
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+}
+
+.box.b {
+  margin: 10px;
+  padding: 4px;
+  position: relative;
+  float: center;
+  border-bottom: 2px solid black;
+}
+
+.main {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.main {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15;
 }
