@@ -7,53 +7,69 @@
     <title>Nomina</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    style="background-image: url(./images/fondo2.jpg); background-size: cover"
-  >
+  <body style = "background-image: url(./images/fondo2.jpg); background-size: cover;" >
     <div class="container">
       <header>
         <img
           src="./images/asd.png"
           alt="Logo"
-          style="width: 225px; height: 225px"
+          style="width: 225px; height: 225px;"
         />
       </header>
     </div>
-    <div class="box a">
-      <div class="box b">
-        <strong><p>LOGIN</p></strong>
+    <div class="box">
+      <div class="box a">
+        <div class="box b">
+          <strong><p class="terminal">Welcome to V.A.N.G.U.A.R.D</p></strong>
+        </div>
+        <label for="nombre" style="margin: 2px;" class="type">User name</label>
+        <input type="text" id="nombre" placeholder="your user" />
+        <label for="apellido" style="margin: 2px;">User Last name</label>
+        <input type="text" id="Apellido" placeholder="your last name" />
+        <label for="cedula" style="margin: 2px;">User ID</label>
+        <input
+          type="text"
+          name=""
+          id="cedula"
+          placeholder="your Identification Number"
+        />
+        <label for="role">Select your role</label>
+        <select name="role" id="rol" style="margin: 2px;">
+          <option value="0">-----select the role-----</option>
+          <optgroup label="Programmer">
+            <option value="jr">junior programmer</option>
+            <option value="sr">senior programmer</option>
+          </optgroup>
+          <optgroup label="Manager">
+            <option value="m1">Business manager</option>
+            <option value="m2">Technical manager</option>
+          </optgroup>
+          <optgroup label="leader">
+            <option value="pl">Project leader</option>
+            <option value="pd">Designer leader</option>
+          </optgroup>
+        </select>
+        <label for="bonus">Select your bonus/discount</label>
+        <select name="bonus" id="concepto">
+          <option value="0">--- select the bonuses---</option>
+          <option value="nb">No bono</option>
+          <optgroup label="bonuses">
+            <option value="b1">bonus for commission</option>
+            <option value="b2">bonus for incentive</option>
+          </optgroup>
+          <optgroup label="discounts">
+            <option value="d1">discount 1</option>
+            <option value="d2">discount 2</option>
+          </optgroup>
+        </select>
+        <br />
+        <button onclick="show()" id="disparador">Submit Data</button>
+        <button onclick="show3()" id="disparador">Show Data</button>
+        <div class="prueba"></div>
       </div>
-      <label for="nombre" style="padding: 5px"> User name </label>
-      <input type="text" id="nombre" placeholder="your name" />
-      <label for="apellido" style="padding: 5px">User Last name</label>
-      <input type="text" id="Apellido" placeholder="your last name" />
-      <label for="cedula" style="padding: 5px">User ID</label>
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="your Identification Number"
-      />
-      <br />
-      <select name="" id="">
-        <option value="0">--select your Role--</option>
-        <optgroup label="Programmer">
-          <option value="1">junior programmer</option>
-          <option value="2">senior programmer</option>
-        </optgroup>
-        <optgroup label="Manager">
-          <option value="3">Business manager</option>
-          <option value="4">Technical manager</option>
-        </optgroup>
-        <optgroup label="leader">
-          <option value="5">Project leader</option>
-          <option value="6">Designer leader</option>
-        </optgroup>
-      </select>
-      <br />
-      <button>Submit</button>
     </div>
 
     <script src="script.js"></script>
+    <canvas></canvas>
   </body>
 </html>

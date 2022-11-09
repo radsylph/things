@@ -8,46 +8,75 @@
 }
 
 .box {
+  position: relative;
   align-items: center;
   align-content: center;
   flex-direction: column;
   display: flex;
+  margin: 5px;
   padding: 10px;
-  margin: 10px;
 }
 
 .box.a {
   border-radius: 20px;
   box-shadow: 2px 2px 2px black;
   border: 2px 5px solid black;
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.623);
   height: auto;
   width: 250px;
 }
 
-.box.a > div {
-  position: relative;
-  padding: 20px;
-  margin: 20px;
-}
-
 .box.b {
-  margin: 10px;
-  padding: 4px;
-  position: relative;
-  float: center;
   border-bottom: 2px solid black;
+  width: 100%;
+  margin: 10px;
 }
 
-.main {
+.terminal {
+  font-family: monospace;
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing2 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+.box.a label {
   color: black;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
 }
 
-.main {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 15;
+@keyframes typing2 {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ff00;
+  }
 }
