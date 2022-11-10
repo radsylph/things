@@ -25,78 +25,118 @@ var cargo = [
   { descriptcion: 'lider de diseño', salario: 2100 },
 ]
 
-var bonus = [
+var bonus3 = [
   { descripcion: 'bonus 1', multiplicador: 0.1 },
   { descripcion: 'bonus 2', multiplicador: 0.05 },
   { descripcion: 'discount 1', multiplicador: 0.1 },
   { descripcion: 'discount 2', multiplicador: 0.05 },
+  { descripcion: 'no bono', multiplicador: 0 },
 ]
-var data = []
-var num1 = 0
-var num2 = 0
-var num3 = 1
+var data = [];
+var num1 = 0;
+var num2;
+var num3;
 
 function show() {
   let rol = document.getElementById('rol')
-  let rol2 = rol.options[rol.selectedIndex].value
-  let bonus = document.getElementById('concepto')
-  let bonus2 = bonus.options[bonus.selectedIndex].value
-  let nombre = document.getElementById('nombre').value
-  let apellido = document.getElementById('Apellido').value
-  let cedula = document.getElementById('cedula').value
+  let rol2 = rol.options[rol.selectedIndex].value;
+  let bonus = document.getElementById('concepto');
+  let bonus2 = bonus.options[bonus.selectedIndex].value;
+  let nombre = document.getElementById('nombre').value;
+  let apellido = document.getElementById('Apellido').value;
+  let cedula = document.getElementById('cedula').value;
 
   let calculo = () => {
     switch (bonus2) {
       case 'nb':
+        num2 = 0;
         num3 = 0;
         break
       case 'b1':
+        num2 = 0;
         num3 = 1;
-
         break
       case 'd1':
-        num3 = 3;
-
+        num2 = 2;
+        num3 = 2;
         break
       case 'b2':
-        num3 = 2;
-
+        num2 = 1;
+        num3 = 1;
         break
       case 'd2':
-        num3 = 4;
-
+        num2 = 3;
+        num3 = 2;
         break
       default:
-        num3 = 1;
-
+        num3 = 0;
         break
     }
   }
 
   let concept = () => {
+    ;
+     let problem2 = "-";
     switch (rol2) {
       case 'jr':
         //alert("este es programador jr");
-        return (concepto = {
-          id_Concepto: 1,
-          monto: cargo[0].salario + cargo[0].salario * bonus[num3].multiplicador,
-          descripcion: 'salario minimo de jr',
-          tipo: bonus2,
-        })
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 0,
+            monto: cargo[0].salario + cargo[0].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de jr',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 0,
+            monto: cargo[0].salario - cargo[0].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de jr',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 0,
+            monto: cargo[0].salario,
+            descripcion: 'salario minimo de jr',
+            tipo: bonus2,
+          })
+        }
+        
         break
       case 'sr':
-        return (concepto = {
-          id_Concepto: 2,
-          monto: cargo[1].salario + cargo[1].salario * bonus[num3].multiplicador,
-          descripcion: 'salario minimo de sr',
-          tipo: bonus2,
-        })
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[1].salario + cargo[1].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de sr',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[1].salario - cargo[1].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de sr',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[1].salario,
+            descripcion: 'salario minimo de sr',
+            tipo: bonus2,
+          })
+        }
         //alert("este es programador sr");
         break
       case 'm1':
         return (concepto = {
-          id_Concepto: 3,
-          monto: cargo[2].salario + cargo[2].salario * bonus[num3].multiplicador,
+          id_Concepto: 2,
+          monto: cargo[2].salario ,
           descripcion: 'salario minimo de gerente de negocios',
           tipo: bonus2,
         })
@@ -104,8 +144,8 @@ function show() {
         break
       case 'm2':
         return (concepto = {
-          id_Concepto: 4,
-          monto: cargo[3].salario + cargo[3].salario * bonus[num3].multiplicador,
+          id_Concepto: 3,
+          monto: cargo[3].salario ,
           descripcion: 'salario minimo de gerente tecnico',
           tipo: bonus2,
         })
@@ -113,8 +153,8 @@ function show() {
         break
       case 'pl':
         return (concepto = {
-          id_Concepto: 5,
-          monto: cargo[4].salario + cargo[4].salario * bonus[num3].multiplicador,
+          id_Concepto: 4,
+          monto: cargo[4].salario ,
           descripcion: 'salario minimo de lider de proyecto',
           tipo: bonus2,
         })
@@ -123,7 +163,7 @@ function show() {
       case 'pd':
         return (concepto = {
           id_Concepto: 6,
-          monto: cargo[5].salario + cargo[5].salario * bonus[num3].multiplicador,
+          monto: cargo[5].salario ,
           descripcion: 'salario minimo de lider de dise;o',
           tipo: bonus2,
         })
@@ -140,7 +180,7 @@ function show() {
       nombre: nombre,
       apellido: apellido,
       cedula: cedula,
-      cargo: cargo[rol.selectedIndex],
+      cargo: cargo[rol.selectedIndex-1],
       concepto: concept(),
     }
     data.push(empleado)
@@ -155,7 +195,7 @@ function show() {
 function show3() {
   let element = document.createElement('div')
   document.body.appendChild(element)
-  for (let index = 0; index < data.length; index++) {
+  /*for (let index = 0; index < data.length; index++) {
     let text = document.createElement('p')
     text.innerHTML =
       data[index].concepto.id_Concepto +
@@ -170,5 +210,6 @@ function show3() {
       'del cual maneja un total de' +
       data[index].concepto.monto
     element.appendChild(text)
-  }
+  }*/
+  console.log(data);
 }
