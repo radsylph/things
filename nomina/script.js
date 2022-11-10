@@ -109,7 +109,7 @@ function show() {
       case 'sr':
         if (num3 == 1){
           return (concepto = {
-            id_Concepto: 2,
+            id_Concepto: 1,
             monto: cargo[1].salario + cargo[1].salario * bonus3[num2].multiplicador,
             descripcion: 'salario minimo de sr',
             tipo: bonus2,
@@ -117,7 +117,7 @@ function show() {
         }
         else if (num3 == 2){
           return (concepto = {
-            id_Concepto: 2,
+            id_Concepto: 1,
             monto: cargo[1].salario - cargo[1].salario * bonus3[num2].multiplicador,
             descripcion: 'salario minimo de sr',
             tipo: bonus2,
@@ -125,7 +125,7 @@ function show() {
         }
         else if (num3 == 0){
           return (concepto = {
-            id_Concepto: 2,
+            id_Concepto: 1,
             monto: cargo[1].salario,
             descripcion: 'salario minimo de sr',
             tipo: bonus2,
@@ -134,40 +134,112 @@ function show() {
         //alert("este es programador sr");
         break
       case 'm1':
-        return (concepto = {
-          id_Concepto: 2,
-          monto: cargo[2].salario ,
-          descripcion: 'salario minimo de gerente de negocios',
-          tipo: bonus2,
-        })
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[2].salario + cargo[2].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de sr',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[2].salario - cargo[2].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de manager de proyecto',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 2,
+            monto: cargo[2].salario,
+            descripcion: 'salario minimo de manager de proyecto',
+            tipo: bonus2,
+          })
+        }
         //alert("este es manager de proyectos");
         break
       case 'm2':
-        return (concepto = {
-          id_Concepto: 3,
-          monto: cargo[3].salario ,
-          descripcion: 'salario minimo de gerente tecnico',
-          tipo: bonus2,
-        })
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 3,
+            monto: cargo[3].salario + cargo[3].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de manager tecnico',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 3,
+            monto: cargo[3].salario - cargo[3].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de manager tecnico',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 3,
+            monto: cargo[3].salario,
+            descripcion: 'salario minimo de manager tecnico',
+            tipo: bonus2,
+          })
+        }
         //alert("este es manager tecnico");
         break
       case 'pl':
-        return (concepto = {
-          id_Concepto: 4,
-          monto: cargo[4].salario ,
-          descripcion: 'salario minimo de lider de proyecto',
-          tipo: bonus2,
-        })
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 4,
+            monto: cargo[4].salario + cargo[4].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de lider de proyecto',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 4,
+            monto: cargo[4].salario - cargo[4].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de lider de proyecto',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 4,
+            monto: cargo[4].salario,
+            descripcion: 'salario minimo de lider de proyecto',
+            tipo: bonus2,
+          })
+        }
         //alert("este es lider de proyecto");
         break
       case 'pd':
-        return (concepto = {
-          id_Concepto: 6,
-          monto: cargo[5].salario ,
-          descripcion: 'salario minimo de lider de dise;o',
-          tipo: bonus2,
-        })
-        //alert("este es lider de diseño");
+        if (num3 == 1){
+          return (concepto = {
+            id_Concepto: 5,
+            monto: cargo[5].salario + cargo[5].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de lider de diseño',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 2){
+          return (concepto = {
+            id_Concepto: 5,
+            monto: cargo[5].salario - cargo[5].salario * bonus3[num2].multiplicador,
+            descripcion: 'salario minimo de lider de diseño',
+            tipo: bonus2,
+          })
+        }
+        else if (num3 == 0){
+          return (concepto = {
+            id_Concepto: 5,
+            monto: cargo[5].salario,
+            descripcion: 'salario minimo de lider de diseño',
+            tipo: bonus2,
+          })
+        }
+        //alert("este es lider de diseño");x
         break
       default:
         alert('error')
@@ -211,5 +283,24 @@ function show3() {
       data[index].concepto.monto
     element.appendChild(text)
   }*/
-  console.log(data);
+
+  for (let index = 0; index < data.length; index++){
+    element.innerHTML =`
+  <div class = "container"> 
+  <div class = "box">
+  <p> nombre del empleado ${data[index].nombre} </p>
+  <p> apellido del empleado ${data[index].apellido} </p>
+  <p> cedula del empleado ${data[index].cedula}</p>
+  <p> salario minimo ${data[index].cargo.salario}</p>
+  <p> monto total a pagar ${data[index].concepto.monto}</p>
+  <div> 
+  </div>
+  </div>
+  </div>
+  `;
+
+  }
+  
+  
+//console.log(data);
 }
