@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>principal</title>
+    <style>
+      .box {
+        position: relative;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        display: flex;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      .box.b {
+        border: 2px solid black;
+        background-color: grey;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px black;
+      }
+
+      .box.b:active {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+      }
+
+      .box.a {
+        border: 2px solid black;
+        background-color: blue;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="root">
+      <div class="box b" id="prueba"><p>cargar modulo</p></div>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
