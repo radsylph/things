@@ -1,12 +1,12 @@
 class btn {
-  constructor(property, Class) {
+  constructor(property) {
     let x = document.createElement("div");
     this.element = x;
     this.property = property;
     //this.Class = Class;
   }
   display() {
-    console.log(`yo tengo esta clase y estas propiedades ${this.property}`);
+    alert(`yo tengo esta clase y estas propiedades ${this.property}`);
   }
 
   DynamicCss1() {

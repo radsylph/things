@@ -10,11 +10,28 @@ try {
   console.log("ha habido un error en la carga del modulo");
 }
 
+function prueba(x) {
+  let test = document.getElementById("descrip");
+  console.log(test.value);
+  x = new btn(test.value);
+  return x;
+}
 function create() {
   try {
-    let x = new btn(
-      "border: 2px solid black; background-color: green; border-radius: 20px; box-shadow: 2px 2px 2px black;"
-    );
+    let SetCss1 = document.createElement("div");
+    let SetCss2 = document.createElement("div");
+    SetCss1.classList = "box";
+    SetCss2.classList = "box b";
+    SetCss2.innerText = "aplicar el Css";
+    SetCss2.id = "btn0";
+    document.body.appendChild(SetCss1);
+    SetCss1.appendChild(SetCss2);
+
+    let Set = document.getElementById("btn0");
+    Set.addEventListener("click", () => {
+      prueba().DynamicCss1();
+    });
+
     let AddBtn1 = document.createElement("div");
     let AddBtn2 = document.createElement("div");
     AddBtn1.classList = "box";
@@ -26,8 +43,7 @@ function create() {
 
     let Add = document.getElementById("btn1");
     Add.addEventListener("click", () => {
-      x.create();
-      x.DynamicCss1();
+      prueba().create();
     });
 
     let HideBtn1 = document.createElement("div");
@@ -42,7 +58,8 @@ function create() {
     let hide = document.getElementById("btn2");
     hide.addEventListener("click", () => {
       console.log("hidden");
-      x.hide();
+
+      prueba().hide();
     });
 
     let ShowBtn1 = document.createElement("div");
@@ -56,7 +73,8 @@ function create() {
     let show = document.getElementById("btn3");
     show.addEventListener("click", () => {
       console.log("Unhidden");
-      x.show();
+
+      prueba().show();
     });
   } catch (error) {
     console.log("ha ocurrido un error " + error);
