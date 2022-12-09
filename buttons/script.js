@@ -12,7 +12,6 @@ try {
 
 function prueba(x) {
   let test = document.getElementById("descrip");
-  console.log(test.value);
   x = new btn(test.value);
   return x;
 }

@@ -3,18 +3,15 @@ class btn {
     let x = document.createElement("div");
     this.element = x;
     this.property = property;
-    //this.Class = Class;
   }
   display() {
-    alert(`yo tengo esta clase y estas propiedades ${this.property}`);
+    console.log(`yo tengo esta clase y estas propiedades ${this.property}`);
   }
 
   DynamicCss1() {
     let Dynamic = document.createElement("style");
     Dynamic.innerHTML = `
-    .special{
     ${this.property}
-    }
     `;
     document.head.appendChild(Dynamic);
   }
@@ -50,63 +47,43 @@ class btn {
   }
 }
 export { btn };
-
-/*class btn {
-  constructor(property) {
-    this.property = property;
-    let Div = document.createElement("div");
-    Div.document.body.appendChild(a);
-    Div.classList = ".box.b";
-  }
-  display() {
-    console.log(`yo tengo estas propiedades ${this.property}`);
-  }
-
-  crear() {}
-
-  DynamicCss1() {
-    let Dynamic = document.createElement("style");
-    Dynamic.innerHTML = `
-    .box.a{
-    ${this.property}
-    }
-    .box.a:active {
-      background-color: black;
-    }
-    `;
-    document.head.appendChild(Dynamic);
-  }
-
-  show() {}
-
-  hide() {}
-
-  addtobody() {}
+/*
+.special{
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
 }
 
-function contar() {
-  const x = new btn(
-    "border-radius: 20px; box-shadow: 2px 2px 2px black; border: 2px 5px solid black; background-color: blue; height: auto; width: 250px;"
-  );
-  x.crear;
-  x.DynamicCss1();
+.special:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
 }
 
-function create() {
-  let x = document.createElement("div");
-  document.body.appendChild(x);
-  x.id = "mark";
-  x.classList = "box";
-  let y = document.createElement("div");
-  y.id = "btn";
-  y.classList = "box a";
-  x.appendChild(y);
-  y.addEventListener("click", () => {
-    contar();
-  });
-  console.log("algo");
+.special:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
-create();
 
-export { btn };
 */
